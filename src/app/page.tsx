@@ -155,60 +155,106 @@ export default function Home() {
             <TypewriterText text="$ cat ./experience/timeline.md" />
           </div>
           <div className="space-y-8">
-            <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+            <div className="p-6 bg-[#112240] rounded-lg border border-[#233554] hover:border-[#64ffda] transition-colors">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold">Freelance Software Engineer</h3>
-                <p className="text-gray-600 dark:text-gray-400">2024 - Present</p>
+                <h3 className="text-xl font-semibold text-[#ccd6f6]">Freelance Software Engineer</h3>
+                <p className="text-[#8892b0]">2024 - Present</p>
               </div>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Upwork • Remote
+              <p className="text-[#8892b0] mb-4">
+                <a href="https://www.upwork.com" target="_blank" rel="noopener noreferrer"
+                  className="hover:text-[#64ffda] transition-colors">
+                  Upwork
+                </a> • Remote
               </p>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-[#8892b0]">
                 <li>• Developed and maintained web applications for international clients</li>
                 <li>• Specialized in building scalable backend services using Go and Node.js</li>
                 <li>• Implemented microservices architectures and distributed systems</li>
                 <li>• Maintained high client satisfaction with excellent communication</li>
               </ul>
+              <div className="mt-4 pt-4 border-t border-[#233554]">
+                <p className="text-[#64ffda] text-sm mb-2">$ Technologies Used:</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Go", "Node.js", "TypeScript", "Firebase", "AWS", "GCP"].map((tech) => (
+                    <span key={tech} className="text-xs px-2 py-1 rounded-full border border-[#64ffda] text-[#64ffda]">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+            <div className="p-6 bg-[#112240] rounded-lg border border-[#233554] hover:border-[#64ffda] transition-colors">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold">Senior Software Engineer</h3>
-                <p className="text-gray-600 dark:text-gray-400">Jan 2024 - Present</p>
+                <h3 className="text-xl font-semibold text-[#ccd6f6]">Senior Software Engineer</h3>
+                <p className="text-[#8892b0]">Jan 2024 - Present</p>
               </div>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Bellbytes • Remote
+              <p className="text-[#8892b0] mb-4">
+                <a href="https://www.bellbytes.com" target="_blank" rel="noopener noreferrer"
+                  className="hover:text-[#64ffda] transition-colors">
+                  Bellbytes
+                </a> • Remote
               </p>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-[#8892b0]">
                 <li>• Lead developer in user authentication and payments team</li>
                 <li>• Implemented secure authentication systems and payment integrations</li>
                 <li>• Developed scalable microservices architecture</li>
               </ul>
+              <div className="mt-4 pt-4 border-t border-[#233554]">
+                <p className="text-[#64ffda] text-sm mb-2">$ Technologies Used:</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Go", "PostgreSQL", "Firestore", "Redis", "Docker", "Kubernetes", "GCP", "Stripe" ].map((tech) => (
+                    <span key={tech} className="text-xs px-2 py-1 rounded-full border border-[#64ffda] text-[#64ffda]">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+            <div className="p-6 bg-[#112240] rounded-lg border border-[#233554] hover:border-[#64ffda] transition-colors">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold">Software Engineer</h3>
-                <p className="text-gray-600 dark:text-gray-400">Jun 2021 - Dec 2023</p>
+                <h3 className="text-xl font-semibold text-[#ccd6f6]">Software Engineer</h3>
+                <p className="text-[#8892b0]">Jun 2021 - Dec 2023</p>
               </div>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Elucidata • Remote
+              <p className="text-[#8892b0] mb-4">
+                <a href="https://www.elucidata.io" target="_blank" rel="noopener noreferrer"
+                  className="hover:text-[#64ffda] transition-colors">
+                  Elucidata
+                </a> • Remote
               </p>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-[#8892b0]">
                 <li>• Worked on AI platform for biomedical data science teams</li>
                 <li>• Core member of the data curation team</li>
                 <li>• Built systems to process and manage large-scale biomedical datasets</li>
                 <li>• Implemented distributed computing solutions for data processing</li>
               </ul>
+              <div className="mt-4 pt-4 border-t border-[#233554]">
+                <p className="text-[#64ffda] text-sm mb-2">$ Technologies Used:</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Node.js", "TypeScript", "Python", "Jupyter", "AWS S3", "Docker", "AWS"].map((tech) => (
+                    <span key={tech} className="text-xs px-2 py-1 rounded-full border border-[#64ffda] text-[#64ffda]">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+            <div className="p-6 bg-[#112240] rounded-lg border border-[#233554] hover:border-[#64ffda] transition-colors">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold">Tutor</h3>
-                <p className="text-gray-600 dark:text-gray-400">Jun 2017 - Jul 2019</p>
+                <h3 className="text-xl font-semibold text-[#ccd6f6]">Tutor</h3>
+                <p className="text-[#8892b0]">Jun 2017 - Jul 2019</p>
               </div>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Triumphant Institute of Management and Education • Bangalore, India
+              <p className="text-[#8892b0] mb-4">
+                <a 
+                  href="https://www.time4education.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-[#64ffda] transition-colors"
+                >
+                  Triumphant Institute of Management and Education
+                </a> • Bangalore, India
               </p>
               <ul className="space-y-2 text-gray-700 dark:text-gray-300">
                 <li>• Taught Biology for grades 11 and 12</li>
