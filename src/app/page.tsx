@@ -105,45 +105,137 @@ export default function Home() {
         className="py-20 bg-[#112240]"
       >
         <div className="container mx-auto px-4">
-          <motion.div className="mb-12 text-[#8892b0]">
-            <TypewriterText text="$ ls ./skills/" />
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12 text-[#8892b0]"
+          >
+            <TypewriterText text="$ neofetch --skills" />
           </motion.div>
+          
           <motion.div 
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+            className="max-w-4xl mx-auto bg-[#0a192f] rounded-lg border border-[#233554] p-8"
           >
-            {[
-              {
-                title: "languages.txt",
-                skills: ["Golang", "TypeScript", "Node.js"]
-              },
-              {
-                title: "architecture.txt",
-                skills: ["Microservices", "Distributed Systems", "REST APIs"]
-              },
-              {
-                title: "tools.txt",
-                skills: ["Git", "Docker", "Cloud Platforms"]
-              }
-            ].map((category, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="p-8 bg-[#0a192f] rounded-lg border border-[#233554] hover:border-[#64ffda] transition-colors"
+            <div className="flex flex-col md:flex-row gap-8">
+              {/* Terminal Window */}
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                className="flex-1 font-mono"
               >
-                <h3 className="text-xl font-semibold mb-6 text-[#ccd6f6]">{'>'} cat {category.title}</h3>
-                <ul className="space-y-3 text-[#8892b0]">
-                  {category.skills.map((skill, idx) => (
-                    <li key={idx} className="flex items-center gap-2">
-                      <span className="text-[#64ffda]">$</span> {skill}
-                    </li>
-                  ))}
-                </ul>
+                <div className="mb-6 flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                
+                <div className="space-y-4">
+                  <div>
+                    <span className="text-[#64ffda]">{'>'} Languages</span>
+                    <motion.div 
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                      className="ml-4 mt-2"
+                    >
+                      {["Go", "TypeScript", "Node.js", "Python"].map((lang, idx) => (
+                        <motion.div 
+                          key={lang}
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.1 }}
+                          className="flex items-center gap-2 text-[#8892b0]"
+                        >
+                          <span className="text-[#64ffda]">$</span> {lang}
+                          <motion.div 
+                            className="h-1 bg-[#64ffda]" 
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${(idx + 2) * 20}px` }}
+                            transition={{ duration: 1, delay: idx * 0.1 }}
+                          />
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  </div>
+
+                  <div>
+                    <span className="text-[#64ffda]">{'>'} Cloud & DevOps</span>
+                    <motion.div 
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: 0.4 }}
+                      className="ml-4 mt-2"
+                    >
+                      {["AWS", "GCP", "Docker", "Kubernetes"].map((tool, idx) => (
+                        <motion.div 
+                          key={tool}
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.4 + idx * 0.1 }}
+                          className="flex items-center gap-2 text-[#8892b0]"
+                        >
+                          <span className="text-[#64ffda]">$</span> {tool}
+                          <motion.div 
+                            className="h-1 bg-[#64ffda]" 
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${(idx + 2) * 20}px` }}
+                            transition={{ duration: 1, delay: 0.4 + idx * 0.1 }}
+                          />
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  </div>
+
+                  <div>
+                    <span className="text-[#64ffda]">{'>'} Databases</span>
+                    <motion.div 
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: 0.6 }}
+                      className="ml-4 mt-2"
+                    >
+                      {["PostgreSQL", "MongoDB", "Redis", "Firestore"].map((db, idx) => (
+                        <motion.div 
+                          key={db}
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.6 + idx * 0.1 }}
+                          className="flex items-center gap-2 text-[#8892b0]"
+                        >
+                          <span className="text-[#64ffda]">$</span> {db}
+                          <motion.div 
+                            className="h-1 bg-[#64ffda]" 
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${(idx + 2) * 20}px` }}
+                            transition={{ duration: 1, delay: 0.6 + idx * 0.1 }}
+                          />
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  </div>
+                </div>
               </motion.div>
-            ))}
+
+              {/* ASCII Art Section */}
+              <motion.div 
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                className="hidden md:block w-64 text-[#64ffda] font-mono whitespace-pre"
+              >
+                {`
+   ____  _    _ _ _     
+  / ___|| | _(_) | |___ 
+  \\___ \\| |/ / | | / __|
+   ___) |   <| | | \\__ \\
+  |____/|_|\\_\\_|_|_|___/
+                `}
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </motion.section>
