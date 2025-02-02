@@ -41,29 +41,31 @@ export default function Home() {
         className="container mx-auto px-4 py-20 md:py-32"
       >
         <div className="max-w-3xl mx-auto">
-          <motion.div className="mb-4 text-[#8892b0]">
+          <motion.div className="mb-4 text-[#8892b0] text-sm">
             <TypewriterText text="$ whoami" />
           </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-bold mb-6 text-[#ccd6f6]"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-[#ccd6f6] leading-tight"
           >
-            {'>'} Aneesa Haroon
+            <span className="hidden sm:inline">{'>'} </span>
+            <span>Aneesa Haroon</span>
           </motion.h1>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-2xl md:text-3xl text-[#8892b0] mb-8"
+            className="text-xl sm:text-2xl md:text-3xl text-[#8892b0] mb-6"
           >
-            {'>'} Senior Software Engineer
+            <span className="hidden sm:inline">{'>'} </span>
+            <span>Senior Software Engineer</span>
           </motion.h2>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-lg mb-10 leading-relaxed max-w-2xl text-[#8892b0]"
+            className="text-sm sm:text-base mb-8 leading-relaxed max-w-2xl text-[#8892b0]"
           >
             <TypewriterText text="$ cat about.txt" />
             <p className="mt-4">
@@ -76,11 +78,11 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="flex gap-6"
+            className="flex flex-col sm:flex-row gap-4"
           >
             <a
               href="mailto:aneesa.mharoon@gmail.com"
-              className="px-6 py-3 border border-[#64ffda] text-[#64ffda] hover:bg-[#64ffda]/10 transition-colors rounded"
+              className="px-4 py-2 sm:px-6 sm:py-3 border border-[#64ffda] text-[#64ffda] hover:bg-[#64ffda]/10 transition-colors rounded text-sm sm:text-base text-center"
             >
               {'>'} ./contact-me.sh
             </a>
@@ -88,7 +90,7 @@ export default function Home() {
               href="https://github.com/aneesaharoon"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 border border-[#8892b0] text-[#8892b0] hover:bg-[#8892b0]/10 transition-colors rounded"
+              className="px-4 py-2 sm:px-6 sm:py-3 border border-[#8892b0] text-[#8892b0] hover:bg-[#8892b0]/10 transition-colors rounded text-sm sm:text-base text-center"
             >
               {'>'} git clone profile
             </a>
