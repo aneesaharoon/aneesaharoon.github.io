@@ -17,9 +17,22 @@ const staggerContainer = {
   }
 };
 
+const TypewriterText = ({ text }: { text: string }) => {
+  return (
+    <motion.span
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.1, staggerChildren: 0.1 }}
+      className="font-mono"
+    >
+      {text}
+    </motion.span>
+  );
+};
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div className="min-h-screen bg-[#0a192f] text-[#64ffda] font-mono">
       {/* Header/Hero Section */}
       <motion.header 
         initial={{ opacity: 0 }}
@@ -28,31 +41,37 @@ export default function Home() {
         className="container mx-auto px-4 py-20 md:py-32"
       >
         <div className="max-w-3xl mx-auto">
+          <motion.div className="mb-4 text-[#8892b0]">
+            <TypewriterText text="$ whoami" />
+          </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600"
+            className="text-5xl md:text-6xl font-bold mb-6 text-[#ccd6f6]"
           >
-            Aneesa Haroon
+            {'>'} Aneesa Haroon
           </motion.h1>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-2xl md:text-3xl text-gray-600 dark:text-gray-400 mb-8"
+            className="text-2xl md:text-3xl text-[#8892b0] mb-8"
           >
-            Senior Software Engineer
+            {'>'} Senior Software Engineer
           </motion.h2>
-          <motion.p 
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-lg mb-10 leading-relaxed max-w-2xl"
+            className="text-lg mb-10 leading-relaxed max-w-2xl text-[#8892b0]"
           >
-            A passionate software engineer with expertise in building scalable applications 
-            using microservices architecture and distributed computing. Specialized in 
-            Golang, TypeScript, and Node.js.
-          </motion.p>
+            <TypewriterText text="$ cat about.txt" />
+            <p className="mt-4">
+              A passionate software engineer with expertise in building scalable applications 
+              using microservices architecture and distributed computing. Specialized in 
+              Golang, TypeScript, and Node.js.
+            </p>
+          </motion.div>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -61,17 +80,17 @@ export default function Home() {
           >
             <a
               href="mailto:aneesa.mharoon@gmail.com"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
+              className="px-6 py-3 border border-[#64ffda] text-[#64ffda] hover:bg-[#64ffda]/10 transition-colors rounded"
             >
-              Contact Me
+              {'>'} ./contact-me.sh
             </a>
             <a
               href="https://github.com/aneesaharoon"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+              className="px-6 py-3 border border-[#8892b0] text-[#8892b0] hover:bg-[#8892b0]/10 transition-colors rounded"
             >
-              GitHub Profile
+              {'>'} git clone profile
             </a>
           </motion.div>
         </div>
@@ -83,17 +102,12 @@ export default function Home() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="bg-gray-50 dark:bg-gray-800/50 py-20"
+        className="py-20 bg-[#112240]"
       >
         <div className="container mx-auto px-4">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold mb-12 text-center"
-          >
-            Technical Expertise
-          </motion.h2>
+          <motion.div className="mb-12 text-[#8892b0]">
+            <TypewriterText text="$ ls ./skills/" />
+          </motion.div>
           <motion.div 
             variants={staggerContainer}
             initial="initial"
@@ -103,29 +117,28 @@ export default function Home() {
           >
             {[
               {
-                title: "Languages",
+                title: "languages.txt",
                 skills: ["Golang", "TypeScript", "Node.js"]
               },
               {
-                title: "Architecture",
+                title: "architecture.txt",
                 skills: ["Microservices", "Distributed Systems", "REST APIs"]
               },
               {
-                title: "Tools & Platforms",
+                title: "tools.txt",
                 skills: ["Git", "Docker", "Cloud Platforms"]
               }
             ].map((category, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="p-8 bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                className="p-8 bg-[#0a192f] rounded-lg border border-[#233554] hover:border-[#64ffda] transition-colors"
               >
-                <h3 className="text-xl font-semibold mb-6">{category.title}</h3>
-                <ul className="space-y-3">
+                <h3 className="text-xl font-semibold mb-6 text-[#ccd6f6]">{'>'} cat {category.title}</h3>
+                <ul className="space-y-3 text-[#8892b0]">
                   {category.skills.map((skill, idx) => (
                     <li key={idx} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-blue-600 rounded-full" />
-                      {skill}
+                      <span className="text-[#64ffda]">$</span> {skill}
                     </li>
                   ))}
                 </ul>
@@ -138,7 +151,9 @@ export default function Home() {
       {/* Experience Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">Experience</h2>
+          <div className="mb-8 text-[#8892b0]">
+            <TypewriterText text="$ cat ./experience/timeline.md" />
+          </div>
           <div className="space-y-8">
             <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
